@@ -1,4 +1,4 @@
-build-jar-complete:
+build-jar-new:
   image: "openjdk:8-jdk"
   stage: build-jar
   only:
