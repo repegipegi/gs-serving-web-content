@@ -5,6 +5,7 @@ build-jar-complete:
     changes:
       - "*"  # run pipeline if a root-level file like Makefile or docker-compose.yml is changed
       - "new/**/*"
-  script:
+  before_script:
     - chmod +x new/gradlew
-    - new/gradlew clean bootJar
+  script:
+    - ./new/gradlew clean bootJar
