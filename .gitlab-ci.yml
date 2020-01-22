@@ -1,0 +1,9 @@
+---
+stages:
+  - build-jar
+  # - build-image
+
+
+include:
+  - '/complete/.gitlab-ci.yml'
+  - '/new/.gitlab-ci.yml'

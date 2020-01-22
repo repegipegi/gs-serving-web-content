@@ -1,0 +1,9 @@
+build-jar-complete:
+  image: "openjdk:8-jdk"
+  stage: build-jar
+  only:
+    changes:
+      - "*"  # run pipeline if a root-level file like Makefile or docker-compose.yml is changed
+      - "new/**/*"
+  script:
+    - ./new/gradlew clean bootJar
