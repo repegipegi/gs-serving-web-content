@@ -8,7 +8,7 @@ build-jar-complete:
   before_script:
     - chmod +x complete/gradlew
   script:
-    - ./complete/gradlew clean bootJar
+    - ./complete/gradlew bootJar
 
 # build-image-complete:
 #   stage: build-image
