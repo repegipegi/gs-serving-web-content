@@ -6,7 +6,8 @@ build-jar-complete:
       - "*"  # run pipeline if a root-level file like Makefile or docker-compose.yml is changed
       - "complete/**/*"
   script:
-    - ./complete/gradlew clean bootJar
+    - chmod +x complete/gradlew
+    - complete/gradlew clean bootJar
 
 # build-image-complete:
 #   stage: build-image
