@@ -23,9 +23,13 @@ build-image-complete:
     changes:
       - "*"  # run pipeline if a root-level file like Makefile or docker-compose.yml is changed
       - "complete/**/*"
+  dependencies:
+    - build-jar-complete
   before_script:
     - cd complete
   script:
     - docker build -t asia.gcr.io/pegipegi-user/cicd/complete .
+  dependencies:
+    - build-jar-complete
   needs:
     - build-jar-complete

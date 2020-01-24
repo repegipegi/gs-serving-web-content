@@ -27,5 +27,7 @@ build-image-new:
     - cd new
   script:
     - docker build -t asia.gcr.io/pegipegi-user/cicd/new .
+  dependencies:
+    - build-jar-new
   needs:
     - build-jar-new
