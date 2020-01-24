@@ -10,6 +10,9 @@ build-jar-new:
     - chmod +x gradlew
   script:
     - ./gradlew bootJar
+  artifacts:
+    paths:
+      - new/build/libs/
 
 build-image-new:
   image: docker:latest
