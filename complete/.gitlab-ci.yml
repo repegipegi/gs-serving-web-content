@@ -12,8 +12,10 @@ build-jar-complete:
     - ./gradlew bootJar
 
 build-image-complete:
-  image: docker:latest
+#  image: docker:latest
   stage: build-image
+  tags:
+    - docker
   before_script:
     - cd complete
   script:
