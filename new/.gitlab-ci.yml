@@ -12,6 +12,7 @@ build-jar-new:
     - ./gradlew bootJar
 
 build-image-new:
+  image: docker:latest
   stage: build-image
   script:
     - docker build -t asia.gcr.io/pegipegi-user/cicd/new .

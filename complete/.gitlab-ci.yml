@@ -12,6 +12,7 @@ build-jar-complete:
     - ./gradlew bootJar
 
 build-image-complete:
+  image: docker:latest
   stage: build-image
   script:
     - docker build -t asia.gcr.io/pegipegi-user/cicd/complete .
