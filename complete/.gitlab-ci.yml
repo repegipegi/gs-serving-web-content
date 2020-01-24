@@ -11,11 +11,15 @@ build-jar-complete:
   script:
     - ./gradlew bootJar
 
-# services:
-#   - docker:dind
 build-image-complete:
   image: docker:latest
+  services:
+    - docker:dind
   stage: build-image
+  only:
+    changes:
+      - "*"  # run pipeline if a root-level file like Makefile or docker-compose.yml is changed
+      - "complete/**/*"
   before_script:
     - cd complete
   script:

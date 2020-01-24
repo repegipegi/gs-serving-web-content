@@ -12,10 +12,14 @@ build-jar-new:
     - ./gradlew bootJar
 
 build-image-new:
-  # image: docker:latest
-  tags:
-    - docker
+  image: docker:latest
+  services:
+    - docker:dind
   stage: build-image
+  only:
+    changes:
+      - "*"  # run pipeline if a root-level file like Makefile or docker-compose.yml is changed
+      - "new/**/*"
   before_script:
     - cd new
   script:
