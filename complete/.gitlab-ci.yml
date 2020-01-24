@@ -12,11 +12,13 @@ build-jar-complete:
     - ./gradlew bootJar
 
 build-image-complete:
-  image: docker:19.03.0
-#  image: docker:latest
+  # image: docker:19.03.0
+  image: docker:latest
   stage: build-image
   services:
-    - docker:19.03.0-dind
+    - docker:dind
+  # services:
+    # - docker:19.03.0-dind
   before_script:
     - cd complete
   script:
