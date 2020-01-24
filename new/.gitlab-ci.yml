@@ -14,6 +14,8 @@ build-jar-new:
 build-image-new:
   image: docker:latest
   stage: build-image
+  before_script:
+    - cd new
   script:
     - docker build -t asia.gcr.io/pegipegi-user/cicd/new .
   needs:

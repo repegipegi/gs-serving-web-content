@@ -14,6 +14,8 @@ build-jar-complete:
 build-image-complete:
   image: docker:latest
   stage: build-image
+  before_script:
+    - cd complete
   script:
     - docker build -t asia.gcr.io/pegipegi-user/cicd/complete .
   needs:
