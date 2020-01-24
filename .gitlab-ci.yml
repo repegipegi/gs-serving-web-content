@@ -1,7 +1,7 @@
 ---
 stages:
   - build-jar
-  # - build-image
+  - build-image
 
 
 include:

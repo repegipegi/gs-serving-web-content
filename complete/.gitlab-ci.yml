@@ -11,9 +11,9 @@ build-jar-complete:
   script:
     - ./gradlew bootJar
 
-# build-image-complete:
-#   stage: build-image
-#   script:
-#     - docker build -t test .
-#   needs:
-#     - build-jar-complete
+build-image-complete:
+  stage: build-image
+  script:
+    - docker build -t asia.gcr.io/pegipegi-user/cicd/complete .
+  needs:
+    - build-jar-complete

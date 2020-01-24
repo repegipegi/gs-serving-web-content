@@ -10,3 +10,10 @@ build-jar-new:
     - chmod +x gradlew
   script:
     - ./gradlew bootJar
+
+build-image-new:
+  stage: build-image
+  script:
+    - docker build -t asia.gcr.io/pegipegi-user/cicd/new .
+  needs:
+    - build-jar-new
