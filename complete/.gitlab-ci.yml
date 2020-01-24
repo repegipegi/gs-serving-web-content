@@ -11,8 +11,8 @@ build-jar-complete:
   script:
     - ./gradlew bootJar
 
-services:
-  - docker:dind
+# services:
+#   - docker:dind
 build-image-complete:
   image: docker:latest
   stage: build-image
