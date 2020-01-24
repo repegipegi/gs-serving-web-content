@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: new
+  type: LoadBalancer
+  labels:
+    app: new
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: new
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new
+  labels:
+    app: new
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: new
+  template:
+    metadata:
+      labels:
+        app: new
+    spec:
+      containers:
+      - image: asia.gcr.io/pegipegi-user/cicd/new
+        name: app
+        ports:
+        - containerPort: 8080
+      nodeSelector:
+        cloud.google.com/gke-nodepool: "default-pool"
+---
